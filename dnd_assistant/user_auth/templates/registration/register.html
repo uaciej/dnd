@@ -1,0 +1,17 @@
+{% extends 'registration/base.html' %}
+
+{% block content %}
+<h1>Registration Form</h1>
+
+<form method="POST" action="{% url 'user_auth:register' %}">
+    {% csrf_token %}
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br>
+    <label for="password2">Confirm Password:</label><br>
+    <input type="password" id="password2" name="password2"><br><br>
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}
