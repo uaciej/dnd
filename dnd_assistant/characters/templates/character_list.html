@@ -12,34 +12,22 @@
         {{ character.abilities }}
         HP: {{ character.hit_points }}<ul>
             <li>STR: {{ character.strength }} (
-                {% if character.strength_modifier >= 0 %}
-                +
-                {% endif %}
+                {% if character.strength_modifier >= 0 %}+{% endif %}
                 {{ character.strength_modifier }})</li>
             <li>DEX: {{ character.dexterity }} (
-                {% if character.dexterity_modifier >= 0 %}
-                +
-                {% endif %}
+                {% if character.dexterity_modifier >= 0 %}+{% endif %}
                 {{ character.dexterity_modifier }})</li>
             <li>CON: {{ character.constitution }} (
-                {% if character.constitution_modifier >= 0 %}
-                +
-                {% endif %}
+                {% if character.constitution_modifier >= 0 %}+{% endif %}
                 {{ character.constitution_modifier }})</li>
             <li>INT: {{ character.intelligence }} (
-                {% if character.intelligence_modifier >= 0 %}
-                +
-                {% endif %}
+                {% if character.intelligence_modifier >= 0 %}+{% endif %}
                 {{ character.intelligence_modifier }})</li>
             <li>WIS: {{ character.wisdom }} (
-                {% if character.wisdom_modifier >= 0 %}
-                +
-                {% endif %}
+                {% if character.wisdom_modifier >= 0 %}+{% endif %}
                 {{ character.wisdom_modifier }})</li>
             <li>CHA: {{ character.charisma }} (
-                {% if character.charisma_modifier >= 0 %}
-                +
-                {% endif %}
+                {% if character.charisma_modifier >= 0 %}+{% endif %}
                 {{ character.charisma_modifier }})</li>
             <form action="{% url 'delete_character' character.id %}" method="POST">
                 {% csrf_token %}

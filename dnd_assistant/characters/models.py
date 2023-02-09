@@ -14,8 +14,8 @@ class Character(models.Model):
     intelligence = models.IntegerField()
     wisdom = models.IntegerField()
     charisma = models.IntegerField()
-    # Modifier fields
 
+    # Modifier fields
     strength_modifier = models.IntegerField(blank=True, null=True)
     dexterity_modifier = models.IntegerField(blank=True, null=True)
     constitution_modifier = models.IntegerField(blank=True, null=True)
@@ -24,7 +24,7 @@ class Character(models.Model):
     charisma_modifier = models.IntegerField(blank=True, null=True)
 
     def calculate_modifiers(self):
-        """Calculate the ability score modifiers according to D&D 5e rules."""
+        #Calculate the ability score modifiers according to D&D 5e rules
         self.strength_modifier = (int(self.strength) - 10) // 2
         self.dexterity_modifier = (int(self.dexterity) - 10) // 2
         self.constitution_modifier = (int(self.constitution) - 10) // 2
